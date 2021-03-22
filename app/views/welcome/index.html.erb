@@ -1,0 +1,14 @@
+<h1 class='text-center'>Welcome</h1>
+
+<% if logged_in? %>
+    <div class="text-center Welcome">
+        <p>Cool Shit.<p>
+    </div>
+<% else %>
+    <div class="text-center Welcome">
+        <p>Please Login or Sign up.<p>
+        <%= link_to "Login", login_path, class: "btn btn-primary" %>
+        <%= link_to "Sign up", signup_path, class: "btn btn-primary" %>
+    </div>
+<% end %>
+
