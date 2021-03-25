@@ -1,8 +1,13 @@
 <h1 class='text-center'>Welcome</h1>
-
 <% if logged_in? %>
     <div class="text-center Welcome">
-        <p>Cool Shit.<p>
+        <div>
+            <%= form_tag "trending", method: "GET" do %>
+                <%= text_field_tag :language, params[:language] %>
+                <input type="submit" class="button" value="Search">
+            <% end %>
+        </div>
+        <%= @output %>
     </div>
 <% else %>
     <div class="text-center Welcome">
