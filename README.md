@@ -1,24 +1,57 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Github-Trending-On-Rails
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+A simple Ruby on Rails application that implements basic user model, with following functionality create, edit, delete and login sessions.
+While logged in Users can search for currently trending developers on github.
 
-* System dependencies
+This feature depends on the github-trending-api project by huchenme.
 
-* Configuration
+Checkout https://github.com/huchenme/github-trending-api/ for more details
 
-* Database creation
+## Requirements
 
-* Database initialization
+Make sure you have the following installed
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+| Application	| Version	| Download  	|
+|:-------------:|:-------------:|:-------------|
+| Ruby      	| 3.0.0 	| https://www.ruby-lang.org/de/documentation/installation/ |
+| Ruby on Rails | 6.1.3 	| https://guides.rubyonrails.org/v5.0/getting_started.html
+| PostgresSQL   | 12.6 	    | https://www.postgresql.org/download|
+| Node      	| 12.21.0 	| https://nodejs.org/en/download/ |
+| yarn      	| 1.22.5 	| https://yarnpkg.com/getting-started/install |
+| PostgreSQL    | 12.6 	    | https://www.postgresql.org/download|
 
-* Deployment instructions
+## Installation
 
-* ...
+Clone the github-trending-api project
+```
+git clone https://github.com/huchenme/github-trending-api.git
+```
+Clone the Github-Trending-On-Rails project
+```
+git clone https://github.com/PandaQT/Github-Trending-On-Rails.git
+```
+to install missing project dependencies run 
+```
+cd Github-Trending-On-Rails
+yarn install jquery popper.js
+bundle install
+```
+## Usage
+
+Start up the api 
+```
+cd github-trending-api
+yarn start
+```
+Start the rails server
+```
+cd Github-Trending-On-Rails
+rails s
+```
+
+Open the browser of your choice and visit localhost:3000 
+
