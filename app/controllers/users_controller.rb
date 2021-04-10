@@ -1,53 +1,65 @@
 class UsersController < ApplicationController
 
+    # Only allow Authorized users to view and modify
     before_action :logged_in_user, only: [:show, :edit, :update, :destroy]
     before_action :correct_user,   only: [:show, :edit, :update, :destroy]
     
+    # Show user resource with matching id
     def show
         @user = User.find(params[:id])
     end
 
+    #
     def new
         @user = User.new
     end
 
+    # Creates a new user resource
     def create
         @user = User.new(user_params)
         if @user.save
             reset_session
             log_in @user
             redirect_to @user
-            flash.now[:notice] = "Successfully create #{@user}."
+            flash[:success] = "Successfully created #{@user}."
         else
-            flash.now[:danger] = "."
+            flash.now[:danger] = "Could not create User"
             render 'new'
         end
     end
 
+    #
     def edit
         @user = User.find(params[:id])
     end
 
+    # Update a user resource with matching id
     def update
         @user = User.find(params[:id])
         if @user.update(user_params)
+            flash[:success] = "Successfully updated"
             redirect_to @user
         else
+            flash.now[:danger] = "Could not update your account #{@user.name}"
             render 'edit'
         end
     end
 
+    # Destroy user resource with matching id
     def destroy
         User.find(params[:id]).destroy
-        redirect_to users_url
+        flash[:success] = "Successfully deleted #{@user.name}"
+        redirect_to root_url
     end
 
     private
-
+        
+        # 
         def user_params
             params.require(:user).permit(:name, :email, :password, :password_confirmation)
         end
-
+        
+        # 
         def correct_user
             @user = User.find(params[:id])
             redirect_to(root_url) unless current_user?(@user)

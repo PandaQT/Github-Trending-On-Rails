@@ -1,11 +1,12 @@
+<% provide(:title, 'Home') %>
 <h1 class='text-center'>Welcome</h1>
 <% if logged_in? %>
     <div class="text-center Welcome">
-    <p>Type in the technology you are interested in</p>
+    <p>Type in the language / technology you are interested in</p>
         <div>
             <%= form_tag "trending", method: "GET" do %>
                 <%= text_field_tag :language, params[:language] %>
-                <input type="submit" class="button" value="Search">
+                <input type="submit" class="button" value="search">
             <% end %>
         </div>
         <%= @output %>

@@ -2,12 +2,9 @@
 
 one:
   language: MyString
-  string: MyString
-  developers: MyString
-  json: MyString
+
 
 two:
   language: MyString
-  string: MyString
-  developers: MyString
-  json: MyString
+
+

@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2021_03_26_001355) do
 
   create_table "trendings", force: :cascade do |t|
     t.string "language"
-    t.json "developers"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

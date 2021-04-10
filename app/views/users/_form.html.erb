@@ -1,4 +1,6 @@
 <%= form_with(model: @user, local: true) do |f| %>
+    
+    <%= render 'error' %>
 
     <%= f.label :name %>
     <%= f.text_field :name, class: 'mb-3 form-control' %>

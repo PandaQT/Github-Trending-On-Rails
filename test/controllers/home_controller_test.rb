@@ -1,10 +1,10 @@
 require "test_helper"
 
-class TrendingControllerTest < ActionDispatch::IntegrationTest
+class HomeControllerTest < ActionDispatch::IntegrationTest
   
   #test "should get index" do
-  #  get trending_index_url
+  #  get welcome_index_url
   #  assert_response :success
   #end
-  
+
 end
