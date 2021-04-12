@@ -68,7 +68,7 @@ will suffice.
 
 Open the browser of your choice and visit localhost:3000 
 
-![Homepage](https://puu.sh/HxHUI/465172ae4c.png =600x)
+![Homepage](https://puu.sh/HxHUI/465172ae4c.png)
 
 ## Tests
 
