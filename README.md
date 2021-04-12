@@ -72,7 +72,7 @@ Open the browser of your choice and visit localhost:3000
 
 ## Tests
 
-To run all test
+To run all tests
 
 ```
 cd Github-Trending-On-Rails
