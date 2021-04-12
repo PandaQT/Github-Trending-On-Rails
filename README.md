@@ -71,10 +71,9 @@ cd Github-Trending-On-Rails
 rails test
 ```
 
-Or to only run tests for a specific module
+To run only a specific type of test
 
 ```
 rails test:models
 rails test:controllers
-rails test:integration
 ```

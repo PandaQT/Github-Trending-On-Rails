@@ -9,9 +9,13 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    #
+    # A new user resource with nil values
     def new
-        @user = User.new
+        if !logged_in?
+            @user = User.new
+        else
+            redirect_to root_url
+        end
     end
 
     # Creates a new user resource
@@ -21,14 +25,14 @@ class UsersController < ApplicationController
             reset_session
             log_in @user
             redirect_to @user
-            flash[:success] = "Successfully created #{@user}."
+            flash[:success] = "Successfully created."
         else
             flash.now[:danger] = "Could not create User"
             render 'new'
         end
     end
 
-    #
+    # Fetch user matching id from db
     def edit
         @user = User.find(params[:id])
     end
@@ -40,7 +44,7 @@ class UsersController < ApplicationController
             flash[:success] = "Successfully updated"
             redirect_to @user
         else
-            flash.now[:danger] = "Could not update your account #{@user.name}"
+            flash.now[:danger] = "Could not update your account"
             render 'edit'
         end
     end
@@ -54,12 +58,12 @@ class UsersController < ApplicationController
 
     private
         
-        # 
+        # Permit user input for name, email, password, and password_confirmation
         def user_params
             params.require(:user).permit(:name, :email, :password, :password_confirmation)
         end
         
-        # 
+        # Check if user matches requested user resource
         def correct_user
             @user = User.find(params[:id])
             redirect_to(root_url) unless current_user?(@user)

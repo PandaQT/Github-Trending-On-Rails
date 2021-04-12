@@ -25,6 +25,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rest-client', '~> 2.1'
 # An XML toolkit for Ruby
 gem 'rexml', '~> 3.2', '>= 3.2.4'
+# Gem for email validation
+gem 'email_validator', '~> 1.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

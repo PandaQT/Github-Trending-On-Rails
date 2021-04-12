@@ -20,11 +20,11 @@ module TrendingHelper
         end
       end
   
-      # Retrieve requested key from cache if it dosen't exist calls trending_request and saves the requested data to the cache
+      # Fetch value for requested cache key if it dosen't exist calls trending_request and saves the requested data to the cache
       def cached_trending
         Rails.cache.fetch(cleaned_query_param, cache_nils: false, :expires_in => 1.hours) do
           request_trending
-          #Check for empty array in case there are no trending devs for the specified category
+          #Check for empty array in case there are no trending devs for the specified technology
           unless @data.empty?
             format_trending
           end
@@ -58,8 +58,6 @@ module TrendingHelper
                     name: data['name'],
                     username: data['username'],
                     avatar: data['avatar'],
-                    description: data['repo']['description'],
-                    url: data['repo']['url']
                   }
           end
           @formatted_arr << hash

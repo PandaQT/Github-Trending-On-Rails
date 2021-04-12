@@ -81,6 +81,8 @@ GEM
     crass (1.0.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    email_validator (1.6.0)
+      activemodel
     erubi (1.10.0)
     ffi (1.15.0)
     globalid (0.4.2)
@@ -225,6 +227,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  email_validator (~> 1.6)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.2, >= 1.2.3)

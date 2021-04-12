@@ -21,13 +21,13 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email should be present" do
-    @user.email = " "
+    @user.email = ""
     assert_not @user.valid?
   end
   
   test "password should be present" do
-    @user.password = " " * 6
-    @user.password_confirmation = " " * 6
+    @user.password = ""
+    @user.password_confirmation = ""
     assert_not @user.valid?
   end
 
@@ -51,7 +51,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email should not be too long" do
-    @user.email = "a" * 101
+    @user.email = "a" * 92 + "@email.com"
     assert_not @user.valid?
   end
 
@@ -59,16 +59,6 @@ class UserTest < ActiveSupport::TestCase
     @user.password = "a" * 21
     assert_not @user.valid?
   end
-  
-  ###########################
-  # Test format constraints #
-  ###########################
-
-  #test "email should be saved as lower case" do 
-  #end
-
-  #test "should not accept invalid email format" do 
-  #end
   
   ####################
   # Test uniqueness #

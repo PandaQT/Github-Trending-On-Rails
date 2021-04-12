@@ -1,7 +1,10 @@
 class SessionsController < ApplicationController
   
-  #def new
-  #end
+  def new
+    if logged_in?
+      redirect_to root_url
+    end
+  end
 
   # Create a session on login
   def create
