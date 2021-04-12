@@ -14,11 +14,10 @@ Make sure you have the following installed
 | Application	| Version	    | Download 	                                               |
 |:-------------:|:-------------:|:---------------------------------------------------------|
 | Ruby 	        | 3.0.0 	    | https://www.ruby-lang.org/de/documentation/installation/ |
-| Ruby on Rails | 6.1.3 	    | https://guides.rubyonrails.org/v5.0/getting_started.html |
+| Ruby on Rails | 6.1.3.1 	    | https://guides.rubyonrails.org/v5.0/getting_started.html |
 | PostgreSQL    | 12.6          | https://www.postgresql.org/download                      |
 | Node 	        | 12.21.0 	    | https://nodejs.org/en/download/                          |
 | yarn 	        | 1.22.5 	    | https://yarnpkg.com/getting-started/install              |
-| PostgreSQL    | 12.6          | https://www.postgresql.org/download                      |
 
 ## Installation
 
@@ -54,7 +53,8 @@ On first time setup
 
 ```
 cd Github-Trending-On-Rails
-rails db:setup
+rails db:setup      
+rails dev:cache
 rails s
 ```
 
