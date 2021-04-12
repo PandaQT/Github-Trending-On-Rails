@@ -10,7 +10,7 @@ class TrendingController < ApplicationController
     fetch_trending
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: cached_trending }
+      format.json { render json: @result }
     end
   end
     

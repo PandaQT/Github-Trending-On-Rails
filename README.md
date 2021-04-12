@@ -26,6 +26,12 @@ Clone the github-trending-api project
 ```
 git clone https://github.com/huchenme/github-trending-api.git
 ```
+To install missing project dependencies
+```
+cd github-trending-api
+yarn install
+```
+
 Clone the Github-Trending-On-Rails project
 ```
 git clone https://github.com/PandaQT/Github-Trending-On-Rails.git
@@ -33,7 +39,7 @@ git clone https://github.com/PandaQT/Github-Trending-On-Rails.git
 To install missing project dependencies
 ```
 cd Github-Trending-On-Rails
-yarn add jquery popper.js
+yarn install
 bundle install
 ```
 ## Usage
