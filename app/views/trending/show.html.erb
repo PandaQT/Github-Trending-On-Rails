@@ -1,11 +1,4 @@
 <% provide(:title, 'Trending') %>
+   
+<pre><%= JSON.pretty_generate(@result)%></pre>
 
-<% if @conn_refused.nil? %>
-    <% if @result != nil %>       
-        <pre><%= JSON.pretty_generate(@result)%></pre>
-    <% else %>
-        <p>There are currently no trending developers in this category<p>
-    <% end %>
-<% else %>
-        <%= simple_format(@conn_refused)%>
- <% end %>

@@ -33,7 +33,7 @@ git clone https://github.com/PandaQT/Github-Trending-On-Rails.git
 To install missing project dependencies
 ```
 cd Github-Trending-On-Rails
-yarn install jquery popper.js
+yarn add jquery popper.js
 bundle install
 ```
 ## Usage

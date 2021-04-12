@@ -12,11 +12,14 @@ module TrendingHelper
           begin
             @result = cached_trending
           rescue Errno::ECONNREFUSED => e
-            @conn_refused =
-                  "Exception Class: #{ e.class.name }" + "\n" +
-                  "Exception Message: #{ e.message}" + "\n" +
-                  "Information: Try running the github-trending-api first"
+            @result =  { 
+                        ExceptionClass: e.class.name,
+                        ExceptionMessage: e.message,
+                        Information: "Try running the github-trending-api first" 
+                      }
           end
+        else
+          @result = { Information: "There is no technology that matches your search available" }
         end
       end
   
@@ -27,6 +30,8 @@ module TrendingHelper
           #Check for empty array in case there are no trending devs for the specified technology
           unless @data.empty?
             format_trending
+          else
+            no_trending_devs = { Information: "There are currently no trending developers in this category" }
           end
         end
       end
